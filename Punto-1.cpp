@@ -64,7 +64,14 @@ int main()
     El i++ es para decirle a la computadora que vaya subiendo de valor i desde 0 hasta el limite superior.
     */
     for (int i = 0; i < palabra.length() ; i++)
-    {
+    {   
+        // Este bloque hace que cada caracter se haga minuscula para no generar problemas.
+        palabra[i] = static_cast<char>
+        (
+            tolower(static_cast<unsigned char>(palabra[i]))
+        );
+    
+
        // isdigit es una funcion que me permite saber si el carater que esta en la posicion palabra[i] es un digito.
         if (isdigit(palabra[i]))
             // Si el if es verdad se añade +1 al contador de digitos.
@@ -75,7 +82,7 @@ int main()
         else if (isalpha(palabra[i]))
 
             // Si el caracter es una letra, este if va a comparar al caracter con cada vocal. Si coincide con una de las vocales se añade al contador de vocales y si no se da por entendido que es una consonante.
-           if (palabra[i] == 'a' || palabra[i] == 'e' || palabra[i] == 'i' || palabra[i] == 'o' || palabra[i] == 'u')
+           if (palabra[i] == 'a' || palabra[i] == 'e' || palabra[i] == 'i' || palabra[i] == 'o' || palabra[i] == 'u' )
                 vocal++;
            else 
                 consonante++;   
