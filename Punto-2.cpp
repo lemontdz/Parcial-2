@@ -54,7 +54,7 @@ int main ()
     {
         cout << k << ": ";
 
-        // Aqui reviso si el numero es igual a la suma de sus divisores.
+        // Aqui reviso si el numero es igual a la suma de sus divisores usando la funcion que ya habiamos definido arriba.
         if (k == divisoresNum(k))
         {
             cout << "Perfecto " << "(Suma de divisores = " << divisoresNum(k) << ")" << endl;
