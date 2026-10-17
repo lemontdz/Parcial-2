@@ -39,7 +39,7 @@ int main ()
     // Verifico si los numeros estan bien puestos.
     if ( a > b )
     {
-        cout << "Rango no permitido. El primer numero debe ser mayor que el segundo.";
+        cout << "Rango no permitido. El segundo numero debe ser mayor que el primero.";
     }    
     
 
@@ -53,11 +53,14 @@ int main ()
     for (int k = a; k <= b; k++)
     {
         cout << k << ": ";
+        
+        // Creo una variable que me guarde la suma de los divisores del numero que se encuentre en el bucle.
+        int sumDiv = divisoresNum(k);
 
         // Aqui reviso si el numero es igual a la suma de sus divisores usando la funcion que ya habiamos definido arriba.
         if (k == divisoresNum(k))
         {
-            cout << "Perfecto " << "(Suma de divisores = " << divisoresNum(k) << ")" << endl;
+            cout << "Perfecto " << "(Suma de divisores = " << sumDiv << ")" << endl;
             perfectos++;
 
         } 
@@ -65,14 +68,14 @@ int main ()
         else {
             if (k > divisoresNum(k)){
 
-                cout << "Deficiente " << "(Suma de divisores = " << divisoresNum(k) << ")" << endl;
+                cout << "Deficiente " << "(Suma de divisores = " << sumDiv << ")" << endl;
                 deficientes++;
 
             } 
             // Aqui reviso si el numero es menor a la suma de sus divisores.
             else {
 
-                cout << "Abundante " << "(Suma de divisores = " << divisoresNum(k) << ")" << endl;
+                cout << "Abundante " << "(Suma de divisores = " << sumDiv << ")" << endl;
                 abundantes++;
 
             }
