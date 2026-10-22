@@ -1,12 +1,18 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 
 using namespace std;
 
 int main()
 {
     string frase;
+    cout << "Ingrese una frase: ";
     getline(cin, frase);
+    for (char& c : frase) 
+    {
+        c = static_cast<char>(tolower(static_cast<unsigned char>(c)));
+    }
     
     bool esPalin = true;
 
