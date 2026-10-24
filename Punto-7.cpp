@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void cifradoCes(char a, string c, int despla)
+void cifradoCes(char a, string c, long long despla)
 {
     long long d = despla % 26;
     if (d < 0) {
@@ -33,7 +33,7 @@ int main ()
 {
     char tipo;
     string frase;
-    int k;
+    long long k;
 
     cout << "Cifrar (C) o descifrar (D): ";
     cin >> tipo;
@@ -48,7 +48,6 @@ int main ()
     cout << "Ingrese la frase: ";
     getline(cin, frase);
     
-    cout << "Resultado: ";
     cifradoCes(tipo ,frase, k);
 
 
