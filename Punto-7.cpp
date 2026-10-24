@@ -3,47 +3,29 @@
 
 using namespace std;
 
-void cifradoCes(char a , string c, int despla)
+void cifradoCes(char a, string c, int despla)
 {
-    string abecedario = "abcdefghijklmnopqrstuvwxyz";
-    string b = c;
-
-   
-    if (a == 'C' || a == 'c')
-    { 
-        if (despla < 0)
-        {
-            despla = 26 + despla;
-        }
-
-        for (int i = 0; i < c.length(); i++)
-        {
-            for(int k = 0; k < abecedario.length(); k++) 
-            {
-                if (c[i] == abecedario[k])
-                {
-                    b[i] = abecedario[(k + despla) % abecedario.length()] ;
-                }
-            }
-        } 
-        cout << b << endl;
+    long long d = despla % 26;
+    if (d < 0) {
+        d += 26;
     }
 
-    if ( a == 'D' || a == 'd')
+    if (a == 'D' || a == 'd') {
+        d = 26 - d;
+    }
+
+    for (int i = 0; i < c.length(); i++)
     {
-        for (int i = 0; i < c.length(); i++)
+        if (c[i] >= 'a' && c[i] <= 'z')
         {
-            for(int k = 0; k < abecedario.length(); k++) 
-            {
-                if (c[i] == abecedario[k])
-                {
-                    b[i] = abecedario[(k - despla + abecedario.length()) % abecedario.length()] ;
-                }
-            }
-        } 
-        cout << b << endl;
-
+            c[i] = 'a' + (c[i] - 'a' + d) % 26;
+        } else if (c[i] >= 'A' && c[i] <= 'Z')
+        {
+            c[i] = 'A' + (c[i] - 'A' + d) % 26;
+        }
     }
+
+    cout << "Resultado: " << c << endl;
 }
 
 
